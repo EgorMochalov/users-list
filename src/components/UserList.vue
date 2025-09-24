@@ -51,3 +51,32 @@ const filteredUsers = computed(() => {
   return users.value.filter(u => u.name.toLowerCase().includes(q))
 })
 </script>
+
+<style scoped>
+.users-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.center { text-align: center; }
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 4px solid #e6eef6;
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.error {
+  color: #dc2626;
+  background: #fff1f2;
+  padding: 10px;
+  border-radius: 6px;
+}
+</style>
